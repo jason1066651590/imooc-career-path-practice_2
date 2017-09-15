@@ -2,9 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>用户注册</title>
+    <link rel="stylesheet" href="../register/index.css">
 </head>
 <body>
-
+<div class="wrap">
+    <header>用户注册</header>
+    <main>
+        <form action="#">
+            <section>
+                <label for="username">用户名：</label>
+                <input type="text" name="username" id="username">
+                <p class="item"></p>
+            </section>
+            <section>
+                <label for="password">登录密码：</label>
+                <input type="password" name="password" id="password">
+                <p class="item"></p>
+            </section>
+            <section>
+                <label for="checkpwd">确认密码：</label>
+                <input type="password" name="username" id="checkpwd">
+                <p class="item"></p>
+            </section>
+            <section>
+                <label for="name">姓名：</label>
+                <input type="text" name="name" id="name">
+                <p class="item"></p>
+            </section>
+            <section><label for="gender">性别：</label>
+                <input type="text" name="gender" id="gender" list="gender_list">
+                <datalist id="gender_list">
+                    <option value="男"></option>
+                    <option value="女"></option>
+                </datalist>
+            </section>
+            <section><label for="cid">身份证号：</label>
+                <input type="text" name="cid" id="cid">
+                <p class="item"></p>
+            </section>
+            <section><label for="email">邮箱：</label>
+                <input type="email" name="email" id="email">
+                <p class="item"></p>
+            </section>
+            <section><label for="number">手机号码：</label>
+                <input type="number" name="number" id="number">
+                <p class="item"></p>
+            </section>
+        </form>
+        <input type="submit" value="提交" id="submit">
+    </main>
+</div>
+<script src="index.js"></script>
 </body>
 </html>
