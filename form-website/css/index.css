@@ -75,7 +75,6 @@ header .h_wrap nav .nav_3 .nav_3_2{
     position: absolute;
     padding: 20px 20px 0;
     font-weight: normal;
-    top: 30px;
     display: none;
 }
 header .h_wrap nav .nav_3 .nav_3_2 a{
@@ -181,14 +180,14 @@ main .m_wrap .bottom form .form_9 label{
     text-align: right;
 }
 main .m_wrap .bottom form .form_1 input,
-main .m_wrap .bottom form .form_2 input,
+main .m_wrap .bottom form .form_2 .form_2_content,
 main .m_wrap .bottom form .form_3 input,
 main .m_wrap .bottom form .form_4 input,
-main .m_wrap .bottom form .form_5 input,
+main .m_wrap .bottom form .form_5 select,
 main .m_wrap .bottom form .form_6 input,
 main .m_wrap .bottom form .form_7 input,
 main .m_wrap .bottom form .form_8 input,
-main .m_wrap .bottom form .form_9 input{
+main .m_wrap .bottom form .form_9 select{
     flex: 1 1 25%;
 }
 main .m_wrap .bottom form .form_1 .item,
@@ -203,8 +202,8 @@ main .m_wrap .bottom form .form_9 .item{
     flex: 1 1 50%;
     margin-left: 10px;
 }
-main .m_wrap .bottom form .form_2 .item{
-    visibility: hidden;
+main .m_wrap .bottom form .form_1 .item{
+    color: rgb(251,116,3);
 }
 main .m_wrap .bottom form .form_2 .item .rect{
     display: inline-block;
@@ -216,20 +215,16 @@ main .m_wrap .bottom form .form_2 .item .rect{
 main .m_wrap .bottom form .form_2 .item .rect:first-child{
     background-color: #f00;
 }
+main .m_wrap .bottom form .form_2 .form_2_content{
+    display: flex;
+    flex-direction: column;
+}
 main .m_wrap .bottom form .form_4 .item{
     position: relative;
 }
 main .m_wrap .bottom form .form_4 span a{
     color:rgb(251,116,3);
 }
-main .m_wrap .bottom form .form_10{
-    margin-left: 25%;
-    margin-bottom: 64px;
-}
-main .m_wrap .bottom form .form_10 a{
-    text-decoration: none;
-}
-
 main .m_wrap .bottom form .form_4 .item .item_content{
     position: absolute;
     border: 1px solid rgb(36,135,201);
@@ -246,6 +241,18 @@ main .m_wrap .bottom form .form_4 .item .item_content .item_content_1{
     margin-bottom: 20px;
     color: #6c6c6c;
 }
+main .m_wrap .bottom form .form_8 .item{
+    border: 1px solid rgb(251,116,3);
+    color: rgb(251,116,3);
+    display: flex;
+}
+main .m_wrap .bottom form .form_10{
+    margin-left: 25%;
+    margin-bottom: 64px;
+}
+main .m_wrap .bottom form .form_10 a{
+    text-decoration: none;
+}
 main .m_wrap #next{
     width: 234px;
     height: 38px;
@@ -254,12 +261,15 @@ main .m_wrap #next{
     border-radius: 10px;
     border: none;
     margin: 0 auto 80px 27%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 main .m_wrap #next:hover{
     cursor: pointer;
     background-color: rgb(36,135,201);
 }
-    /*底部*/
+/*底部*/
 footer{
     background-color: #efefef;
     color: #999;

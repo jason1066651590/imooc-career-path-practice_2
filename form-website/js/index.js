@@ -1,6 +1,7 @@
 // 声明变量，定义自己的命名空间
 var myspace={};
 //往命名空间添加属性
+myspace.header_list_parent=document.querySelector(".nav_3");
 myspace.header_list=document.querySelector(".nav_3_1");
 myspace.header_list_content=document.querySelector(".nav_3_2");
 myspace.username=document.querySelector("#username");
@@ -17,7 +18,7 @@ myspace.item_rect=document.getElementsByClassName("rect");
 myspace.next=document.getElementById("next");
 myspace.name_rule=document.querySelector(".name_rule");
 myspace.item_content=document.querySelector(".item_content");
-myspace.form=document.querySelector("form");
+myspace.pwd_warn=document.querySelector('.pwd_warn');
 myspace.test1=false;
 myspace.test2=false;
 myspace.test3=false;
@@ -33,7 +34,12 @@ myspace.header_list.addEventListener("mouseover",function(){
         myspace.header_list_content.style.display="block";
     }
 });
-myspace.header_list.addEventListener("mouseout",function(){
+myspace.header_list_content.addEventListener("mouseover",function(){
+    if(myspace.header_list_content.style.display="none") {
+        myspace.header_list_content.style.display="block";
+    }
+});
+myspace.header_list_parent.addEventListener("mouseout",function(){
     if(myspace.header_list_content.style.display="block") {
         myspace.header_list_content.style.display="none";
     }
@@ -54,7 +60,7 @@ myspace.username.addEventListener("blur",function(){
     var reg=/^[a-zA-Z]\w{5,29}$/;
     var str=myspace.username.value;
     if(str===""||!reg.test(str)){
-        myspace.item[0].innerHTML="6-30位字母、数字或'_'，字母开头";
+        myspace.item[0].innerHTML="6-30位字母、数字或“_”，字母开头";
         myspace.item[0].style.color="red";
     }else{
         myspace.item[0].innerHTML="用户名输入正确";
@@ -69,18 +75,16 @@ myspace.pwd.addEventListener("blur",function(){
     var reg_3=/^[a-zA-Z0-9]{6,20}|[^a-zA-Z\s]{6,20}|[^0-9\s]{6,20}$/;
     var str=myspace.pwd.value;
     if(str===""||!reg_1.test(str)){
-        myspace.item[1].style.visibility="visible";
-        myspace.item[1].innerHTML="6-20位字母、数字或符号";
-        myspace.item[1].style.color="red";
+        myspace.pwd_warn.innerHTML="请输入6-20位字母、数字或符号";
+        myspace.pwd_warn.style.color="red";
+        myspace.pwd_warn.style.marginTop="5px";
     }else{
-        myspace.item[1].innerHTML="<span class=\"rect\"></span><span class=\"rect\"></span><span class=\"rect\"></span>";
+        myspace.pwd_warn.style.display="none";
         if(reg_2.test(str)){
-            myspace.item[1].style.visibility="visible";
+            myspace.item_rect[0].style.backgroundColor="#f00";
         }else if(reg_3.test(str)){
-            myspace.item[1].style.visibility="visible";
             myspace.item_rect[1].style.backgroundColor="orange";
         }else if(reg_1.test(str)){
-            myspace.item[1].style.visibility="visible";
             myspace.item_rect[1].style.backgroundColor="orange";
             myspace.item_rect[2].style.backgroundColor="green";
         }
@@ -115,17 +119,6 @@ myspace.myname.addEventListener("blur",function(){
         myspace.test4=true;
     }
 });
-//证件类型的判断验证
-myspace.certificate.addEventListener("blur",function(){
-    if(myspace.certificate.value===""){
-        myspace.item[4].innerHTML="请选择证件类型";
-        myspace.item[4].style.color="red";
-    }else{
-        myspace.item[4].innerHTML="选择成功";
-        myspace.item[4].style.color="green";
-        myspace.test5=true;
-    }
-});
 //证件号码的判断验证
 myspace.cert_num.addEventListener("blur",function(){
     var reg=/^\d{17}[0-9xX]$/;
@@ -136,7 +129,7 @@ myspace.cert_num.addEventListener("blur",function(){
     }else{
         myspace.item[5].innerHTML="号码输入正确";
         myspace.item[5].style.color="green";
-        myspace.test6=true;
+        myspace.test5=true;
     }
 });
 //邮箱的判断验证
@@ -149,7 +142,7 @@ myspace.email.addEventListener("blur",function(){
     }else{
         myspace.item[6].innerHTML="邮箱格式正确";
         myspace.item[6].style.color="green";
-        myspace.test7=true;
+        myspace.test6=true;
     }
 });
 //手机号码的判断验证
@@ -159,29 +152,19 @@ myspace.num.addEventListener("blur",function(){
     if(str===""||!reg.test(str)){
         myspace.item[7].innerHTML="您输入的手机号码不是有效的格式！";
         myspace.item[7].style.color="red";
+        myspace.item[7].style.border="none";
     }else{
         myspace.item[7].innerHTML="手机格式正确";
         myspace.item[7].style.color="green";
-        myspace.test8=true;
-    }
-});
-//旅客类型的判断验证
-myspace.visitor.addEventListener("blur",function(){
-    if(myspace.visitor.value===""){
-        myspace.item[8].innerHTML="请选择旅客类型";
-        myspace.item[8].style.color="red";
-    }else{
-        myspace.item[8].innerHTML="选择成功";
-        myspace.item[8].style.color="green";
-        myspace.test9=true;
+        myspace.test7=true;
     }
 });
 //下一步提交的判断验证
 myspace.next.addEventListener("click",function(){
-    if(myspace.test1===false||myspace.test2===false||myspace.test3===false||myspace.test4===false||myspace.test5===false||myspace.test6===false || myspace.test7===false || myspace.test8===false || myspace.test9==false){
-        myspace.form.action="#";
+    if(myspace.test1===false||myspace.test2===false||myspace.test3===false||myspace.test4===false||myspace.test5===false||myspace.test6===false || myspace.test7===false){
+        myspace.next.src="#";
     }else{
-        myspace.form.action="http://www.imooc.com";
+        myspace.next.src="http://www.imooc.com";
     }
 });
 
