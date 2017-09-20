@@ -4,6 +4,7 @@ html {
 body{
     margin: 0;
     font-family:"Times New Roman",Georgia,Serif;
+    /*overflow-x: hidden;*/
 }
 .banner_wrap,
 .bannerBottom_wrap,
