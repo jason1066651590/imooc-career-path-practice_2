@@ -1,0 +1,320 @@
+/*初始化样式*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: #ced3d6;
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    min-width:1200px;
+}
+.main_wrap,
+.footer_wrap{
+    width: 1200px;
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+/*顶部样式*/
+.header{
+    background-color: #fff;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+/*顶部左边样式*/
+.header .header_left{
+    display: flex;
+    align-items: center;
+}
+/*顶部logo样式*/
+.header .header_left .header_logo{
+    width: 200px;
+    height: 80px;
+    background: url("../img/logo.png");
+    margin: 0 50px 0 20px;
+}
+/*顶部导航栏样式*/
+.header .header_left .header_nav a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    margin-right: 50px;
+}
+.header .header_left .header_nav a:hover{
+    color: #f00;
+}
+.header .header_left .header_nav a:nth-child(2){
+    position: relative;
+}
+.header .header_left .header_nav a:nth-child(2):before{
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: url("../img/icon-new.png");
+    position: absolute;
+    right: -15px;
+    top: -10px;
+}
+/*顶部右边样式*/
+.header .header_right{
+    display: flex;
+    align-items: center;
+}
+/*搜索栏样式*/
+.header .header_right .header_search {
+    width: 200px;
+    height: 30px;
+    border-bottom: 3px solid #ced3d6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .header_right .header_search a{
+    background: #f4f5f7;
+    padding: 3px 5px;
+    border-radius: 10px;
+    color: #686d71;
+    text-decoration: none;
+    font-size: 12px;
+}
+.header .header_right .header_search .header_search_logo{
+    height: 22px;
+    width: 22px;
+    margin-right: 20px;
+    background: url("../img/icon-1-sprite_w22.png") left top no-repeat;
+    cursor: pointer;
+}
+/*购买样式*/
+.header .header_right .header_buy{
+    height: 28px;
+    width: 28px;
+    background-color: #686d71;;
+    background-image: url("../img/shopcar.png");
+    background-position:  4px 30%;
+    background-repeat: no-repeat;
+    margin-left:50px;
+    border-radius: 50%;
+}
+/*信息通知样式*/
+.header .header_right .header_notice{
+    height: 22px;
+    width: 22px;
+    background: url("../img/icon-1-sprite_w22.png") center 68% no-repeat;
+    margin: 0 50px 0 50px;
+}
+/*头像样式*/
+.header .header_right .header_avatar{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: url("../img/ava.jpg") no-repeat;
+    background-size: cover;
+    margin-right: 20px;
+}
+.header .header_right .header_avatar:hover{
+    -webkit-box-shadow: 0 0 0 2px #f00;
+    -moz-box-shadow: 0 0 0 2px #f00;
+    box-shadow:  0 0 0 2px #f00;
+}
+
+
+
+/*主体样式*/
+.main{
+    background: url("../img/bg.jpg") no-repeat;
+    background-size: 100% 400px;
+    background-color: #f4f5f9;
+    padding-bottom: 50px;
+}
+.main .main_wrap .main_carousel{
+    position: relative;
+    overflow: hidden;
+    width: 1200px;
+    height: 460px;
+    margin-bottom: 50px;
+}
+/*轮播图片样式*/
+.main .main_wrap .main_carousel .pic_wrap img{
+    vertical-align: bottom;
+    border-radius: 10px;
+}
+/*轮播小圆点样式*/
+.main .main_wrap .main_carousel .main_dot{
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+.main .main_wrap .main_carousel .main_dot span{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background-color: grey;
+    margin-right: 10px;
+}
+/*切换上一张和切换下一张样式*/
+.main .main_wrap .main_carousel .main_prev,
+.main .main_wrap .main_carousel .main_next{
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.main .main_wrap .main_carousel .main_prev:hover,
+.main .main_wrap .main_carousel .main_next:hover{
+    background-color: rgba(0,0,0,.5);
+}
+.main .main_wrap .main_carousel .main_prev{
+    left: 0;
+    background: url("../img/pre2.png") center center no-repeat;
+ }
+.main .main_wrap .main_carousel .main_next{
+    right: 0;
+    background: url("../img/pre.png") center center no-repeat;
+}
+/*懒加载区域样式*/
+.main{
+    color: #000;
+}
+.main .main_wrap .main_lazyload .main_class1,
+.main .main_wrap .main_lazyload .main_class2{
+    margin-bottom: 50px;
+}
+.main .main_wrap .main_lazyload .main_class1 h1,
+.main .main_wrap .main_lazyload .main_class2 h1,
+.main .main_wrap .main_lazyload .main_class3 h1{
+    margin-bottom: 20px;
+}
+.main .main_wrap .main_lazyload .main_class1 img,
+.main .main_wrap .main_lazyload .main_class2 img,
+.main .main_wrap .main_lazyload .main_class3 img{
+    width: 220px;
+    height: 220px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.main .main_wrap .main_lazyload .main_class1 .main_class_wrap,
+.main .main_wrap .main_lazyload .main_class2 .main_class_wrap,
+.main .main_wrap .main_lazyload .main_class3 .main_class_wrap{
+    display: flex;
+    justify-content: space-between;
+}
+.main .main_wrap .main_lazyload .main_class1 .main_class_container,
+.main .main_wrap .main_lazyload .main_class2 .main_class_container,
+.main .main_wrap .main_lazyload .main_class3 .main_class_container{
+    width: 220px;
+    height: 320px;
+}
+.main .main_wrap .main_lazyload .main_class1 .main_class_info,
+.main .main_wrap .main_lazyload .main_class2 .main_class_info,
+.main .main_wrap .main_lazyload .main_class3 .main_class_info{
+    padding: 20px;
+    background: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.main .main_wrap .main_lazyload .main_class1 .main_class_info p,
+.main .main_wrap .main_lazyload .main_class2 .main_class_info p,
+.main .main_wrap .main_lazyload .main_class3 .main_class_info p{
+    line-height: 30px;
+}
+.main .main_wrap .main_lazyload .main_class1 .main_class_info p:first-child,
+.main .main_wrap .main_lazyload .main_class2 .main_class_info p:first-child,
+.main .main_wrap .main_lazyload .main_class3 .main_class_info p:first-child{
+    font-size: 16px;
+    font-weight: 600;
+}
+.main .main_wrap .main_lazyload .main_class1 .main_class_info p:last-child,
+.main .main_wrap .main_lazyload .main_class2 .main_class_info p:last-child,
+.main .main_wrap .main_lazyload .main_class3 .main_class_info p:last-child{
+    color: #7d7e81;
+}
+
+
+
+/*底部样式*/
+.footer{
+    background: #fff;
+}
+.footer .footer_wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/*底部社交链接样式*/
+.footer .footer_wrap .footer_social{
+    margin: 20px 0;
+}
+.footer .footer_wrap .footer_social a{
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    margin-right: 20px;
+}
+.footer .footer_wrap .footer_social .weibo{
+    background: url("../img/idx-btm.png") left 84% no-repeat;
+}
+.footer .footer_wrap .footer_social .wechat{
+    background: url("../img/idx-btm.png") 33% 84% no-repeat;
+}
+.footer .footer_wrap .footer_social .weico{
+    background: url("../img/idx-btm.png") 67% 84% no-repeat;
+}
+.footer .footer_wrap .footer_social .qzone{
+    background: url("../img/idx-btm.png") right 84% no-repeat;
+}
+.footer .footer_wrap .footer_social .weibo:hover{
+    background: url("../img/idx-btm.png") left bottom no-repeat;
+}
+.footer .footer_wrap .footer_social .wechat:hover{
+    background: url("../img/idx-btm.png") 33% bottom no-repeat;
+}
+.footer .footer_wrap .footer_social .weico:hover{
+    background: url("../img/idx-btm.png") 67% bottom no-repeat;
+}
+.footer .footer_wrap .footer_social .qzone:hover{
+    background: url("../img/idx-btm.png") right bottom no-repeat;
+}
+/*网站链接样式*/
+.footer .footer_wrap .footer_partner{
+    margin-bottom: 20px;
+}
+.footer .footer_wrap .footer_partner a{
+    text-decoration: none;
+    color: #ced3d6;
+    margin-right: 20px;
+}
+.footer .footer_wrap hr{
+    width: 100%;
+    border: 1px solid #ced3d6;
+}
+.footer .footer_wrap p{
+    margin: 20px 0;
+}
+
+/*轮播图小圆点活动样式*/
+.main .main_wrap .main_carousel .main_dot .active{
+    border-color: grey ;
+    background-color: #fff;
+}
+.main .main_wrap .main_carousel .pic_wrap .animate{
+    animation: carousel 2s ease-out;
+}
+@keyframes carousel {
+    from{opacity: 0}
+    to{opacity:1;}
+}
