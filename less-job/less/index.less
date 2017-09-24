@@ -1,0 +1,332 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+p{
+  margin:0;
+}
+.header,.main,.footer{
+  width:100%;
+}
+a {
+  text-decoration: none;
+}
+//布局样式
+#ft-size(@name){// 字体大小定义
+  & when(@name=small){
+    font-size: 12px;
+  }
+  & when(@name=medium){
+    font-size: 14px;
+  }
+  & when(@name=lagre){
+    font-size: 16px;
+  }
+  & when(@name=title){
+    font-size: 18px;
+  }
+}
+#color(@name){//字体颜色定义
+  & when(@name=white){
+    color: #fff;
+  }
+  & when(@name=weak){
+    color: #576067;
+  }
+  & when(@name=f_color){
+    color: #929292;
+  }
+  & when(@name=f_web){
+    color: #f00;
+  }
+}
+#bg-color(@name) {// 背景色定义
+  & when(@name=black) {
+    background-color: #07111b;
+  }
+  & when(@name=weak){
+    background-color: #363c41;
+  }
+  & when(@name=white){
+    background-color: #fff;
+  }
+}
+#layout(@name) {
+  &  when(@name=header){
+    height: 70px;
+    #bg-color(black);
+  }
+  &  when(@name=footer){
+    height: 100px;
+    #bg-color(black);
+  }
+}
+#display(@name){
+  &  when(@name=flex){
+    display: flex;
+  }
+  &  when(@name=block){
+    display: block;
+  }
+  &  when(@name=inline-block){
+    display: inline-block;
+  }
+}
+//功能函数定义
+#bg-img(@src){
+  background-image: url("../img/@{src}");
+  background-repeat: no-repeat;
+}
+#radius(@radius:50%){
+  border-radius: @radius;
+}
+#width_height(@width;@height){
+  width: @width;
+  height: @height;
+}
+#line-height(@height){
+  height: @height;
+  line-height: @height;
+}
+//模块样式
+.header{
+  #layout(header);
+  #display(flex);
+  justify-content: space-between;
+  align-items: center;
+  &_left{
+    #display(flex);
+    align-items: center;
+    &_logo{
+      #width_height(128px;40px);
+      #bg-img("logo.png");
+      margin:0 50px 0 40px;
+    }
+    &_nav{
+      #ft-size(large);
+      #display(flex);
+      &_item{
+        #color(white);
+        position: relative;
+        #display(block);
+        padding: 0 20px 0 20px;
+        #line-height(70px);
+        &_active{
+          #bg-color(weak);
+        }
+        &:hover{
+          #bg-color(weak);
+        }
+        &_logo{
+          &:before{
+            position: absolute;
+            content: "";
+            #width_height(16px;16px);
+            right: 6px;
+            top: 12px;
+            #bg-img("icon-new.png");
+          }
+        }
+      }
+    }
+  }
+  &_right{
+    #display(flex);
+    align-items:center;
+    &_search{
+      #display(flex);
+      justify-content:space-between;
+      width: 250px;
+      border-bottom: 2px solid #363c41;
+      padding: 0 0 5px 0;
+      &_keyword{
+        #color(weak);
+        padding: 5px;
+        #bg-color(weak);
+        #ft-size(small)
+      }
+      &_logo{
+        #width_height(22px;22px);
+        margin-right: 20px;
+        #bg-img("icon-1-sprite_w22.png");
+        background-position: left top;
+      }
+    }
+    &_buy{
+      #width_height(22px;22px);
+      margin: 0 50px 0 50px;
+      #bg-img("shopcar.png");
+      background-position: 4px 30%;
+    }
+    &_info{
+      #width_height(22px;22px);
+      #bg-img("icon-1-sprite_w22.png");
+      background-position: 0% 68%;
+    }
+    &_avatar{
+      #width_height(40px;40px);
+      margin: 0 20px 0 50px;
+      #bg-img("ava.jpg");
+      background-position: center center;
+      background-size: cover;
+      #radius;
+    }
+  }
+}
+
+.main{
+  .banner{
+    #width_height(100%;560px);
+    #bg-img("bg.jpg");
+  }
+  .course{
+    #width_height(1200px;auto);
+    #display(flex);
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: -120px;
+    margin-bottom: 80px;
+    &_wrap{
+      #width_height(285px;300px);
+      margin-bottom: 40px;
+      #bg-color(white);
+      #radius(10px);
+      &_img{
+        #width_height(285px;100px);
+        background-size: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+      &_img1{
+        #bg-img("course1.jpg")
+      }
+      &_img2{
+        #bg-img("course2.jpg")
+      }
+      &_img3{
+        #bg-img("course3.jpg")
+      }
+      &_img4{
+        #bg-img("course4.jpg")
+      }
+      &_img5{
+        #bg-img("course5.jpg")
+      }
+      &_img6{
+        #bg-img("course6.jpg")
+      }
+      &_img7{
+        #bg-img("course7.jpg")
+      }
+      &_img8{
+        #bg-img("course8.jpg")
+      }
+      &_img9{
+        #bg-img("course9.jpg")
+      }
+      &_contain{
+        font-family: "宋体";
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        #width_height(285px;200px);
+        padding: 30px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 0 3px #e6e6e6;
+        &_info{
+          border-bottom: 1px solid #e3e3e3;
+          padding-bottom: 10px;
+          margin-bottom: 40px;
+          p{
+            font-weight: 600;
+            #ft-size(title);
+            margin-bottom: 10px;
+            height: 42px;
+          }
+          &_courseNum,
+          &_coursePerson{
+            #color(f_color);
+            #ft-size(small);
+          }
+        }
+        &_price{
+          #color(f_web);
+        }
+      }
+      &:after{
+        #bg-img("titlebg.png");
+        content: '';
+        #width_height(275px;300px);
+        position: absolute;
+        top: 7px;
+        left: 5px;
+        border-radius: 10px;
+        z-index: -1;
+        box-shadow: 0 0 10px 10px #e6e6e6;
+      }
+      position: relative;
+    }
+    &_last{
+      margin: 0 auto;
+    }
+  }
+}
+
+.footer{
+  #layout(footer);
+  &_wrap{
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    #display(flex);
+    justify-content:space-between;
+    align-items:center;
+  }
+  &_info{
+    &_web{
+      margin-bottom: 10px;
+      a{
+        #color(f_color);
+        margin-right: 30px;
+        #ft-size(medium);
+        &:hover{
+          #color(f_web);
+        }
+      }
+    }
+    &_copyright{
+      #color(weak);
+      #ft-size(small);
+    }
+  }
+  &_social{
+    a{
+      #display(inline-block);
+      #width_height(32px;40px);
+      #bg-img("footer-sprite.png");
+      margin-right: 10px;
+      position: relative;
+    }
+    .wechat{
+      background-position: left 76%;
+      &:hover{
+        &:before{
+          position: absolute;
+          content: '';
+          #width_height(170px;200px);
+          #bg-img("footer-sprite.png");
+          top: -210px;
+          left: -80px;
+        }
+      }
+    }
+    .weibo{
+      background-position: left 87%;
+    }
+    .qq{
+      background-position: left 99%;
+    }
+  }
+}
