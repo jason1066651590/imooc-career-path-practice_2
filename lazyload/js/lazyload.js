@@ -15,7 +15,7 @@ $(function () {
 
     //位置检测
     function inVisibleArea(elem) {
-        return $win.scrollTop() + $win.height() >= $(elem).offset().top;
+        return $win.scrollTop() + $win.height()*3/4 >= $(elem).offset().top;
     }
 
     //显示图片
